@@ -1,8 +1,10 @@
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
         task1();
         task2();
-//        task3();
+        task3();
 
     }
 
@@ -57,7 +59,8 @@ public class Main {
     }
     public static int checkClientDevice(int clientOS, int clientDeviceYear) {
         int checkClientDevice;
-        int currentYear = 2022;
+//        int currentYear = 2022;
+        int currentYear = LocalDate.now().getYear();
         if (clientOS == 0 && clientDeviceYear == currentYear) {
             checkClientDevice = 1;
         } else if (clientOS == 0) {
@@ -74,6 +77,26 @@ public class Main {
     public static void task3() {
         System.out.println();
         System.out.println("Задача 3");
+
+        int deliveryDistance = 95;
+        int deliveryDays = getDeliveryDays(deliveryDistance);
+        if (deliveryDistance <=100) {
+            System.out.println("Потребуется дней: " + deliveryDays);
+        } else {
+            System.out.println("Расстояние большое. Доставки нет.");
+        }
+    }
+    
+    public static int getDeliveryDays(int deliveryDistance) {
+        int getDeliveryDays = 0;
+        if (deliveryDistance <= 20) {
+            getDeliveryDays = 1;
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            getDeliveryDays = 2;
+        } else if (deliveryDistance > 60 && deliveryDistance <=100) {
+            getDeliveryDays = 3;
+        }
+        return getDeliveryDays;
 
     }
 }
