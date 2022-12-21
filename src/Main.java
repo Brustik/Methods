@@ -20,7 +20,7 @@ public class Main {
         }
 
     }
-    
+
     public static boolean isYearLeap(int year) {
         boolean isYearLeap = false;
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {  //сгуглил, у самого код внизу:)
@@ -57,6 +57,7 @@ public class Main {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         }
     }
+
     public static int checkClientDevice(int clientOS, int clientDeviceYear) {
         int checkClientDevice;
 //        int currentYear = 2022;
@@ -80,20 +81,20 @@ public class Main {
 
         int deliveryDistance = 95;
         int deliveryDays = getDeliveryDays(deliveryDistance);
-        if (deliveryDistance <=100) {
+        if (deliveryDistance <= 100) {
             System.out.println("Потребуется дней: " + deliveryDays);
         } else {
             System.out.println("Расстояние большое. Доставки нет.");
         }
     }
-    
+
     public static int getDeliveryDays(int deliveryDistance) {
         int getDeliveryDays = 0;
         if (deliveryDistance <= 20) {
             getDeliveryDays = 1;
         } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
             getDeliveryDays = 2;
-        } else if (deliveryDistance > 60 && deliveryDistance <=100) {
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
             getDeliveryDays = 3;
         }
         return getDeliveryDays;
